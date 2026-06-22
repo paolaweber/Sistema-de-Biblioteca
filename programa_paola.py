@@ -128,10 +128,10 @@ def remover_livro(biblioteca): #remove livro pelo código
     return biblioteca
     
 def listar_todos(biblioteca):
-	print('===lista de livros===')
+	print('=== Lista de livros ===')
 	
 	if len(biblioteca)==0:
-		print('Nenhum livro cadastrado')
+		print('Nenhum livro foi cadastrado.')
 		return
 	for livro in biblioteca:
 		print(livro.titulo+" (" + str(livro.ano) + ")") #precisei de ajuda do Claude para confirmar se estava correta a estrutura. 
@@ -152,6 +152,21 @@ def realizar_emprestimo(biblioteca):
 	biblioteca[indice].status='emprestado'
 	print('Empréstimo efetuado!')
 	return biblioteca
+	
+def realizar_devolucao(biblioteca):
+	print('=== Realizar Devolução ===')
+	codigo=input('Digite o código do livro: ')
+	indice=buscar_pelo_codigo(biblioteca, codigo)
+	
+	if indice==-1:
+		print('Livro não encontrado!')
+		return biblioteca
+		
+	biblioteca[indice].status='disponivel'
+	print('Devolução concluída!')
+	return biblioteca
+	
+
 	
 
 			
