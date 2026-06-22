@@ -47,6 +47,42 @@ def ordenar_por_titulo(biblioteca):
             j -= 1
         biblioteca[j + 1] = chave
     return biblioteca
+    
+ 
+#aqui vou criar "def's" para listar as funcionalidades do menu.
+
+
+def consultar_livro(biblioteca):
+	print('=== Consultar Livro ===')
+	print('1- Por codigo')
+	print('2- Por autor')
+	opcao=input('Digite a opção desejada: ')
+	
+	if opcao =='1':
+		codigo=input('Digite o código do livro: ')
+		indice=buscar_pelo_codigo(biblioteca, codigo)
+		if indice==-1:
+			print('livro não encontrado')
+			return
+		exibir_livro(biblioteca[indice])
+		return 
+		
+	if opcao=='2':
+		autor=input('Digite o nome do autor do livro: ')
+		encontrou=False
+		for livro in biblioteca:
+			if livro.autor.lower()==autor.lower():
+				exibir_livro(livro)
+				encontrou=True
+		if not encontrou:
+			print('Livro não foi encontrado.')
+		return
+	print('Opção inválida.')
+	
+	
+	
+				
+
 
 		
 	
