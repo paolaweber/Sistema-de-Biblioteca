@@ -99,14 +99,27 @@ def alterar_dados(biblioteca):
         biblioteca[indice].titulo=input('Digite o novo titulo: ')
         biblioteca=ordenar_por_titulo(biblioteca)
         print('Titulo alterado!')
+        
+def remover_livro(biblioteca): #remove livro pelo código
+    print('=== Remover Livro ===')
+    codigo=input('Digite o código do livro a remover: ')
+    indice=buscar_por_codigo(biblioteca, codigo)
+
+    if indice==-1:
+        print('Este livro não foi encontrado!')
+        return biblioteca
+
+    biblioteca.pop(indice) #precisei de ajuda do Claude para remover e retornar o elemento do indice, usei o .pop
+    print('Livro removido!')
+    return biblioteca
         return biblioteca
 
     if opcao=='2':
         biblioteca[indice].autor=input('Digite o novo autor: ')
-        print("Autor alterado!")
+        print('Autor alterado!')
         return biblioteca
 
-    if opcao=="3":
+    if opcao=='3':
         biblioteca[indice].ano=int(input('Digite o novo ano: '))
         print('Ano alterado!')
         return biblioteca
