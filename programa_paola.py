@@ -180,7 +180,48 @@ def exibir_menu(): #menu, primeira opção que irá aparecer para o usuário.
     print('7- Realizar devolucao')
     print('8- Sair')
     print('============================')
-	
+    
+
+#agora vou criar a def principal, ela controla como o programa vai ser executado.
+
+
+def main():
+
+    biblioteca=[]
+    rodando=True
+
+    while rodando:
+        exibir_menu()
+        opcao=input('Escolha a opcao desejada: ')
+
+        if opcao=='1':
+            biblioteca=cadastrar_livro(biblioteca)
+
+        if opcao=='2':
+            consultar_livro(biblioteca)
+
+        if opcao=='3':
+            biblioteca=alterar_dados(biblioteca)
+
+        if opcao=='4':
+            biblioteca=remover_livro(biblioteca)
+
+        if opcao=='5':
+            listar_todos(biblioteca)
+
+        if opcao=='6':
+            biblioteca=realizar_emprestimo(biblioteca)
+
+        if opcao=='7':
+            biblioteca=realizar_devolucao(biblioteca)
+
+        if opcao=='8':
+            print("Encerrando o sistema. Ate logo!")
+            rodando=False
+
+
+# Ponto de entrada do programa
+main()	
 
 			
 		
