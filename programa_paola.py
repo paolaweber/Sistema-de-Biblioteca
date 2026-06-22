@@ -80,6 +80,40 @@ def consultar_livro(biblioteca):
 	print('Opção inválida.')
 	
 	
+def alterar_dados(biblioteca):
+    print('=== Alterar Dados ===')
+    codigo=input('Digite o código do livro: ')
+    indice=buscar_por_codigo(biblioteca, codigo)
+
+    if indice==-1: #menor que um quebra e volta para a biblioteca.
+        print('Livro não encontrado!')
+        return biblioteca
+
+    print('O que vocẽ gostaria de alterar?')
+    print('1 - Titulo')  
+    print('2 - Autor')
+    print('3 - Ano')
+    opcao=input('Digite a opção desejada: ') 
+
+    if opcao =='1':
+        biblioteca[indice].titulo=input('Digite o novo titulo: ')
+        biblioteca=ordenar_por_titulo(biblioteca)
+        print('Titulo alterado!')
+        return biblioteca
+
+    if opcao=='2':
+        biblioteca[indice].autor=input('Digite o novo autor: ')
+        print("Autor alterado!")
+        return biblioteca
+
+    if opcao=="3":
+        biblioteca[indice].ano=int(input('Digite o novo ano: '))
+        print('Ano alterado!')
+        return biblioteca
+
+    print('Opcão inválida.')
+    return biblioteca
+
 	
 				
 
