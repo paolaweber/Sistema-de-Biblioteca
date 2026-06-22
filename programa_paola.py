@@ -126,7 +126,19 @@ def remover_livro(biblioteca): #remove livro pelo código
 
     print('Opcão inválida.')
     return biblioteca
-
+    
+def listar_todos(biblioteca):
+	print('===lista de livros===')
+	
+	if len(biblioteca)==0:
+		print('Nenhum livro cadastrado')
+		return
+	for livro in biblioteca:
+		print(livro.titulo+" (" + str(livro.ano) + ")") #precisei de ajuda do Claude para confirmar se estava correta a estrutura. 
+		
+		
+	print('Nenhum livro foi cadastrado.')
+	return
 	
 				
 
