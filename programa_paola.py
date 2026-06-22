@@ -1,5 +1,6 @@
-#TRABALHO FINAL - ALGORÍTMOS E PROGRAMAÇÃO 2026.1
-#Discente: Paola Weber Turma:02.
+#TRABALHO FINAL 
+#DISCIPLINA: ALGORÍTMOS DE PROGRAMAÇÃO 2026.1
+#Discente: Paola Weber    Turma:02.
 
 #SISTEMA DE CONTROLE DE BIBLIOTECAS COM A STRUCT: CLASS
 
@@ -31,12 +32,12 @@ def buscar_pelo_codigo(biblioteca, codigo):
     return -1  #retorna -1 se não encontrar
 
 def exibir_livro(livro):
-    print("Codigo  : " + livro.codigo)
-    print("Titulo  : " + livro.titulo)
-    print("Autor   : " + livro.autor)
-    print("Ano     : " + str(livro.ano))
-    print("Status  : " + livro.status)
-    print("----------------------------")
+    print('Codigo  : ' + livro.codigo)
+    print('Titulo  : ' + livro.titulo)
+    print('Autor   : ' + livro.autor)
+    print('Ano     : ' + str(livro.ano))
+    print('Status  : ' + livro.status)
+    print('----------------------------')
 
 def ordenar_por_titulo(biblioteca):
     for i in range(1, len(biblioteca)):
@@ -152,7 +153,7 @@ def listar_todos(biblioteca):
         return
 
     for livro in biblioteca:
-        print(livro.titulo + " (" + str(livro.ano) + ")")
+        print(livro.titulo + ' (' + str(livro.ano) + ')')
 
 def realizar_emprestimo(biblioteca):
     print('=== Realizar Empréstimo ===')
