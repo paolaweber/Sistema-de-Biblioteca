@@ -167,13 +167,24 @@ def realizar_devolucao(biblioteca):
 	return biblioteca
 	
 
+def exibir_menu(): #menu, primeira opção que irá aparecer para o usuário.
+    print('============================')
+    print(' Sistema de Biblioteca')
+    print('============================')
+    print('1- Cadastrar livro')
+    print('2- Consultar livro')
+    print('3- Alterar dados')
+    print('4- Remover livro')
+    print('5- Listar todos')
+    print('6- Realizar emprestimo')
+    print('7- Realizar devolucao')
+    print('8- Sair')
+    print('============================')
 	
 
 			
 		
-	print('Nenhum livro foi cadastrado.')
-	return
-	
+
 				
 
 
