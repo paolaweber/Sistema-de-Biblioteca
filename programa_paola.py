@@ -38,6 +38,19 @@ def exibir_livro(livro):
     print("Status  : " + livro.status)
     print("----------------------------")
     
+def ordenar_por_titulo(biblioteca):
+	for i in range(1,len(biblioteca)):
+		chave=biblioteca[i]
+		j=i-1
+		while j>=0 and biblioteca[j].titulo.lower()> chave.titulo.lower(): #utilizei ajuda do Claude para inserir o lower(que deixa todas as letras da string minusculas), para não precisar criar um if ou for para distinguir minúsculas de maiúsculas.
+            biblioteca[j + 1] = biblioteca[j]
+            j -= 1
+        biblioteca[j + 1] = chave
+    return biblioteca
+
+		
+	
+    
     
 	
 	
