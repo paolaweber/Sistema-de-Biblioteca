@@ -135,7 +135,26 @@ def listar_todos(biblioteca):
 		return
 	for livro in biblioteca:
 		print(livro.titulo+" (" + str(livro.ano) + ")") #precisei de ajuda do Claude para confirmar se estava correta a estrutura. 
-		
+
+def realizar_emprestimo(biblioteca):
+	print('=== Realizar Empréstimo ===')
+	codigo=input('Digite o código do livro escolhido: ')
+	indice=buscar_pelo_codigo(biblioteca, codigo)
+	
+	if indice==-1:
+		print('Livro não encontrado')
+		return biblioteca
+	
+	if biblioteca[indice].status=='emprestado':
+		print('Livro já está com empréstimo constando no sistema')
+		return biblioteca
+	
+	biblioteca[indice].status='emprestado'
+	print('Empréstimo efetuado!')
+	return biblioteca
+	
+
+			
 		
 	print('Nenhum livro foi cadastrado.')
 	return
